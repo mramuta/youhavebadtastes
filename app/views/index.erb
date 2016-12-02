@@ -1,0 +1,16 @@
+<div class="container">
+<h1>you have bad taste</h1>
+<h4>if someone doesnt like what you like, tell them why they are wrong</h4>
+</div>
+
+
+
+<div class="container">
+  <h4>Tell these people, tell them theyre wrong</h4>
+  <%=@tweets if @tweets%>
+    <%@tweets.each do |tweet|%>
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><%=tweet[:text]%></p>&mdash; <%=tweet[:name]%> (@<%=tweet[:screen_name]%>) <a href="https://twitter.com/<%=tweet[:screen_name]%>/status/<%=tweet[:id]%>"><%=tweet[:created_at]%></a></blockquote>
+    <%end%>
+  <%end%>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
